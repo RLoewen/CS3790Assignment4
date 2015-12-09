@@ -7,11 +7,11 @@
 #define REQUEST_INTERVAL 10
 #include <stdio.h>
 
-typedef struct REQUEST_NODE {
+/*typedef struct REQUEST_NODE {
 	int leaseLength;
 	int nodeSize;
 }REQUEST_NODE;
-
+*/
 struct range {
 	int start;		// the starting address of the range
 	int size;		// size of the range
@@ -28,25 +28,34 @@ struct allocNode {
 	struct allocNode *next;	//pointer to next node;
 }
 
-typedef struct filesystem{
+typedef struct {
 
 	DIRECTORY d;
 	FAT F;
 	BLOCK B[FATSIZE];
 }filesystem;
 
-REQUEST_NODE rNode;	// create a rNode
+//REQUEST_NODE rNode;	// create a rNode
 
 int generateRequest(){
 
-	rNode.nodeSize = (rand() % (MAX_SIZE - MIN_SIZE) + MIN_SIZE);
-	rNode.leaseLength = (rand() % (MAX_LEASE - MIN_LEASE) + MIN_LEASE);
+	//rNode.nodeSize = (rand() % (MAX_SIZE - MIN_SIZE) + MIN_SIZE);
+	//rNode.leaseLength = (rand() % (MAX_LEASE - MIN_LEASE) + MIN_LEASE);
+
+
+
 
 	return 0;
 }
 
 
 int main () {
+
+	filesystem fs;
+	int fd;
+
+	// initialize fs start locations to -1 (empty
+	for (int i=0; i< D)
 
 	long clock = 0;
     while (++clock != TIME_LIMIT){
